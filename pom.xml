@@ -3,13 +3,45 @@
   <groupId>Rest_assured_Beeceptor</groupId>
   <artifactId>Rest_assured_Beeceptor</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+  <build>
+  <pluginManagement>
+   <plugins>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M5</version>
+         <configuration>
+     <includes>
+     </includes>
+     </configuration>
+      </plugin>
+    <plugin>
+     <groupId>org.apache.maven.plugins</groupId>
+     <artifactId>maven-compiler-plugin</artifactId>
+     <version>3.10.1</version>
+    </plugin>
+   </plugins>
+  </pluginManagement>
+ </build>
   <dependencies>
- <dependency>
+<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+<dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>rest-assured</artifactId>
+    <version>4.5.1</version>
+    <scope>test</scope>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+<dependency>
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
     <version>7.7.1</version>
     <scope>test</scope>
-    </dependency>
+</dependency>
 <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
 <dependency>
     <groupId>com.googlecode.json-simple</groupId>
