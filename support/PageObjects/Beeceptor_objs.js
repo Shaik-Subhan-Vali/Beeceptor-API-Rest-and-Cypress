@@ -102,7 +102,64 @@ class RestAPI{
         })      
     }
     
-
+    Get_list_users_deatils(method,burl,endpoints){
+        cy.request({
+            method: method,
+            url : burl + endpoints,
+            headers:{
+                "content-type":"application/json"
+            }
+        }).then((x)=>{
+            expect(x.status).to.equal(200);
+             let obj = JSON.parse(JSON.stringify(x.body))
+             let name = obj.name;
+             expect(name).to.equal("Emily Johnson");
+        })      
+    }
+    Get_standard_roles(method,burl,endpoints){
+        cy.request({
+            method: method,
+            url : burl + endpoints,
+            headers:{
+                "content-type":"application/json"
+            }
+        }).then((x)=>{
+            expect(x.status).to.equal(200);
+             let obj = JSON.parse(JSON.stringify(x.body))
+             let name = obj[0].name;
+             expect(name).to.equal("Admin");
+        })      
+    }
+    
+    Get_popular_quotes(method,burl,endpoints){
+        cy.request({
+            method: method,
+            url : burl + endpoints,
+            headers:{
+                "content-type":"application/json"
+            }
+        }).then((x)=>{
+            expect(x.status).to.equal(200);
+             let obj = JSON.parse(JSON.stringify(x.body))
+             let quote = obj[0].quote;
+             expect(quote).to.equal("The only way to do great work is to love what you do.");
+        })      
+    }
+    List_all_countries(method,burl,endpoints){
+        cy.request({
+            method: method,
+            url : burl + endpoints,
+            headers:{
+                "content-type":"application/json"
+            }
+        }).then((x)=>{
+            expect(x.status).to.equal(200);
+             let obj = JSON.parse(JSON.stringify(x.body))
+             let code = obj[0];
+             expect(code).to.equal("[");
+        })      
+    }
+    
 }
 
 export default RestAPI;

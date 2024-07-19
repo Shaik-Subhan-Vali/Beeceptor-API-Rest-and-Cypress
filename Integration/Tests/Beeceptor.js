@@ -26,8 +26,17 @@ describe('Beeceptor API testing - POM', () => {
     it('Get a list of all the users',()=>{
         RAPI.Get_list_users("GET",baseurl,"/users")
     })
-    
+    it('Retrieve a users details',()=>{
+        RAPI.Get_list_users_deatils("GET",baseurl,"/users/1")
+    })
+    it('Get a list of standard roles.',()=>{
+        RAPI.Get_standard_roles("GET",baseurl,"/roles")
+    })
+    it('List of most pupular quotes',()=>{
+        RAPI.Get_popular_quotes("GET",baseurl,"/quotes")
+    })
+    it('List of all the countries in the world with their two-digit country code',()=>{
+        RAPI.List_all_countries("GET",baseurl,"/countries")
+    })
 
-    
-    
 })
