@@ -58,6 +58,51 @@ class RestAPI{
         })      
     }
 
+    list_companies(method,burl,endpoints){
+        cy.request({
+            method: method,
+            url : burl + endpoints,
+            headers:{
+                "content-type":"application/json"
+            }
+        }).then((x)=>{
+            expect(x.status).to.equal(200);
+             let obj = JSON.parse(JSON.stringify(x.body))
+             let ceoName = obj[1].ceoName;
+             expect(ceoName).to.equal("Jane Doe");
+        })      
+    }
+    Retrieve_details_company(method,burl,endpoints){
+        cy.request({
+            method: method,
+            url : burl + endpoints,
+            headers:{
+                "content-type":"application/json"
+            }
+        }).then((x)=>{
+            expect(x.status).to.equal(200);
+             let obj = JSON.parse(JSON.stringify(x.body))
+             let industry = obj.industry;
+             expect(industry).to.equal("Technology");
+        })      
+    }
+    
+    Get_list_users(method,burl,endpoints){
+        cy.request({
+            method: method,
+            url : burl + endpoints,
+            headers:{
+                "content-type":"application/json"
+            }
+        }).then((x)=>{
+            expect(x.status).to.equal(200);
+             let obj = JSON.parse(JSON.stringify(x.body))
+             let name = obj[2].name;
+             expect(name).to.equal("John Smith");
+        })      
+    }
+    
+
 }
 
 export default RestAPI;

@@ -17,5 +17,17 @@ describe('Beeceptor API testing - POM', () => {
     it('Retrieve a comment by passing and numeric/alphanumeric ID',()=>{
         RAPI.Retrieve_comment("GET",baseurl,"/comments/1")
     })
-   
+    it('Get a list of all the companies',()=>{
+        RAPI.list_companies("GET",baseurl,"/companies")
+    })
+    it('Retrieve details about a company by passing company ID.',()=>{
+        RAPI.Retrieve_details_company("GET",baseurl,"/companies/1")
+    })
+    it('Get a list of all the users',()=>{
+        RAPI.Get_list_users("GET",baseurl,"/users")
+    })
+    
+
+    
+    
 })
