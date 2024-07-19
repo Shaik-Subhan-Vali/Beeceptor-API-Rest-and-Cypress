@@ -29,7 +29,34 @@ class RestAPI{
             
         })      
     }
-
+    Listing_blog_comments(method,burl,endpoints){
+        cy.request({
+            method: method,
+            url : burl + endpoints,
+            headers:{
+                "content-type":"application/json"
+            }
+        }).then((x)=>{
+            expect(x.status).to.equal(200);
+             let obj = JSON.parse(JSON.stringify(x.body))
+             let email = obj[3].email;
+             expect(email).to.equal("sophia.lee@example.com");
+        })      
+    }
+    Retrieve_comment(method,burl,endpoints){
+        cy.request({
+            method: method,
+            url : burl + endpoints,
+            headers:{
+                "content-type":"application/json"
+            }
+        }).then((x)=>{
+            expect(x.status).to.equal(200);
+             let obj = JSON.parse(JSON.stringify(x.body))
+             let email = obj.email;
+             expect(email).to.equal("john.smith@example.com");
+        })      
+    }
 
 }
 
