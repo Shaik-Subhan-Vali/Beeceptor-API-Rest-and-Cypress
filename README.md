@@ -6,7 +6,7 @@ Beeceptor offers JSON data for rapid frontend prototyping and testing without ne
 
 ## Objective
 
-### To perform different types of HTTP requests (GET, POST, PUT, DELETE) using the provided website for API testing purposes.
+### To perform different types of HTTP requests (GET, POST, PUT, DELETE) for API testing purposes.
 
 ## Tech Stack used in this Project
 
