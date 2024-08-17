@@ -37,7 +37,7 @@ Beeceptor-API-Rest-and-Cypress/
 ├─ src/
 ├─ test/
 ├─ java/
-├─ My_Package/
+├─ My_Package /
 ├─ Beeceptor_API.java
 
 For Rest Assured API
